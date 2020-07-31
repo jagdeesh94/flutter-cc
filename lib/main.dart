@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cc/style.dart';
 
 import 'screens/location_detail/location_detail.dart';
 
@@ -11,8 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter CC',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          textTheme: TextTheme(title: AppBarTextStyle)
+        ),
+        textTheme: TextTheme(
+          title: TitleTextStyle,
+          body1: Body1TextStyle
+        ),
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
