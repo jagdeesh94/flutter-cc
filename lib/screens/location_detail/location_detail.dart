@@ -6,12 +6,15 @@ import '../../models/location.dart';
 
 class LocationDetail extends StatelessWidget {
 
+  final int _locationID;
+  LocationDetail(this._locationID);
   //We Shouldn't load data in build function as build function will be called multiple times.
   //But just for demo, we have loaded here.
+  //NOTE: we'll use scoped_model later
+
   @override
   Widget build(BuildContext context) {
-    final locations = Location.fetchAll();
-    final location = locations.first;
+    final location = Location.fetchByID(_locationID);
     return Scaffold(
       appBar: AppBar(
         title: Text(location.name),
